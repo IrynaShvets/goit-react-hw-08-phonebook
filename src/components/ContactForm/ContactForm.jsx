@@ -1,12 +1,10 @@
-import { useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { BsTelephonePlus } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import { Button } from '@mui/material';
 import FormImage from '../../images/contact.png';
-
 import {
   useGetContactsByNameQuery,
   useAddContactMutation,
@@ -23,8 +21,6 @@ import {
 function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const navigate = useNavigate();
-
   const [addContact, { isLoading }] = useAddContactMutation();
   const { data: contacts } = useGetContactsByNameQuery();
 
@@ -33,7 +29,6 @@ function ContactForm() {
 
   const handleChange = e => {
     const { name, value } = e.currentTarget;
-
     switch (name) {
       case 'name':
         setName(value);
@@ -41,7 +36,6 @@ function ContactForm() {
       case 'number':
         setNumber(value);
         break;
-
       default:
         break;
     }
@@ -64,18 +58,14 @@ function ContactForm() {
       addContact({ name, number });
       setName('');
       setNumber('');
-
       toast.success(`${name} with tel:${number} added to contacts.`);
     }
-
-    /*  navigate('/contacts', { replace: true }); */
   };
 
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
         <Label htmlFor={nameInputId}>Name</Label>
-
         <Input
           type="text"
           name="name"
@@ -88,7 +78,6 @@ function ContactForm() {
         />
 
         <Label htmlFor={numberInputId}>Number</Label>
-
         <InputBottom
           type="tel"
           name="number"
@@ -100,20 +89,10 @@ function ContactForm() {
           required
         />
 
-        {/*  <Button type="submit" disabled={isLoading}>
-          <BsTelephonePlus
-            style={{
-              width: 30,
-              height: 30,
-            }}
-          />{' '}
-          Add contact
-        </Button> */}
         <Button
           type="submit"
           disabled={isLoading}
           color="secondary"
-          /*  sx={{ mr: 2 }} */
           variant="outlined"
         >
           <BsTelephonePlus
@@ -135,19 +114,3 @@ export default ContactForm;
 ContactForm.propTypes = {
   onSubmit: PropTypes.func,
 };
-
-/* <Button
-  type="submit"
-  disabled={isLoading}
-  color="secondary"
-  sx={{ mr: 4 }}
-  variant="outlined"
->
-  <BsTelephonePlus
-    style={{
-      width: 30,
-      height: 30,
-    }}
-  />{' '}
-  Add contact
-</Button>; */

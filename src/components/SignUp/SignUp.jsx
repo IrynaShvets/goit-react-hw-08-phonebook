@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, NavLink } from 'react-router-dom';
 import {} from 'react-router-dom';
 import {
   Avatar,
@@ -9,7 +8,6 @@ import {
   TextField,
   FormControlLabel,
   Checkbox,
-  Link,
   Grid,
   Box,
   Typography,
@@ -22,10 +20,9 @@ import { Image, StyledNavLink } from './SignUp.styled';
 import RegisterImage from '../../images/sign-up.jpg';
 
 const theme = createTheme();
-/* { isRegister } */
-export default function SignUp() {
+
+function SignUp() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -70,7 +67,6 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          {/*     {isRegister && ( */}
           <Box
             component="form"
             noValidate
@@ -134,21 +130,16 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                {/* navigate('/login') */}
-                {/* <Link href="#" variant="body1">
-                  Already have an account? Sign in
-                </Link> 
-                <StyledNavLink to="contacts">Contacts</StyledNavLink>
-                */}
                 <StyledNavLink to={'/login'}>
                   Already have an account? Sign in
                 </StyledNavLink>
               </Grid>
             </Grid>
           </Box>
-          {/*     )} */}
         </Box>
       </Container>
     </ThemeProvider>
   );
 }
+
+export default SignUp;

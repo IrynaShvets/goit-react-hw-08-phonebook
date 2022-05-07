@@ -1,17 +1,16 @@
-import { StyledNavLink, Nav } from './AuthNav.styled';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import AppRegistrationTwoToneIcon from '@mui/icons-material/AppRegistrationTwoTone';
 import * as React from 'react';
+import { BottomNavigationAction, BottomNavigation } from '@mui/material';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
+import { StyledNavLink } from './AuthNav.styled';
 
-export default function AuthNav() {
+function AuthNav() {
   const [value, setValue] = React.useState('recents');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  
   return (
     <BottomNavigation value={value} onChange={handleChange}>
       <BottomNavigationAction
@@ -33,4 +32,5 @@ export default function AuthNav() {
     </BottomNavigation>
   );
 }
-/*  sx={{ width: 1000 }} */
+
+export default AuthNav;

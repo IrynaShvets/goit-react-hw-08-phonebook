@@ -9,7 +9,7 @@ import {
   Subtitle,
 } from './AuthHome.styled';
 import VolunteerActivismRoundedIcon from '@mui/icons-material/VolunteerActivismRounded';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer';
 import Love from '../../images/home.jpg';
 
 function AuthHome() {
@@ -26,7 +26,6 @@ function AuthHome() {
           </Logo>
         </Container>
         <CardImage>
-          {/*  https://pixabay.com/get/g9fa48eaefdd502f2b93d6ceda7b71b2c0efa1c7e52fe946417a3da8aab11f40ea2fb18e6ac3b34d9c50b3895b024b1a3610c097b53b3801da4a7ebad8fa4a473_1920.jpg */}
           <Image src={Love} alt="I love phone." />
           <ImageSubtitle>
             <Subtitle>
@@ -40,6 +39,5 @@ function AuthHome() {
     </>
   );
 }
-/*  width="2000"
-        height="600" */
+
 export default AuthHome;

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   height: auto;
   margin: 30px 0;
-
   margin-left: 40px;
 `;
 
@@ -18,11 +17,12 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 480px;
   height: 40px;
+  padding: 10px 30px;
   outline: none;
   border: 0;
   border-bottom: 1px solid #000;
-  padding: 10px 30px;
   font-size: 20px;
+  
   &::placeholder {
     font: inherit;
     font-size: 20px;

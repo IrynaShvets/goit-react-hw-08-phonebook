@@ -12,9 +12,7 @@ import {
   Text,
   ContactWrapper,
   ChangeColor,
-  Image,
 } from './ContactList.styled';
-/* import ContactImage from '../../images/user2.jpg'; */
 
 const ContactList = ({ onDeleteContact }) => {
   const { data: contacts } = useGetContactsByNameQuery();
@@ -29,7 +27,6 @@ const ContactList = ({ onDeleteContact }) => {
 
   return (
     <>
-      {/*  <Image src={ContactImage} alt="alt" /> */}
       {contacts && (
         <List>
           {getVisibleContacts.map(({ id, name, number }) => (

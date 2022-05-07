@@ -36,19 +36,10 @@ export const AddressLink = styled.a`
   font-size: 12px;
   font-weight: 400;
 `;
+
 export const AddressItem = styled.li`
-  font-family: Raleway, sans-serif;
   color: #100733;
+  font-family: Raleway, sans-serif;
   font-size: 12px;
   font-weight: 400;
 `;
-/* ,
-  ,
-  export const AddressItem = styled.li`
-  color: #b43bc4;
-`;
- */
-/* display: flex;
-#5c0505
-  
-  justify-content: center; justify-content: center; align-items: center;flex-direction: column; */

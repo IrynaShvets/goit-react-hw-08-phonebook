@@ -1,16 +1,11 @@
 import React from 'react';
-import { LineWave } from 'react-loader-spinner';
+import { Hearts } from 'react-loader-spinner';
 import { Container } from './Loader.styled';
 
 const Loader = () => {
   return (
     <Container>
-      <LineWave
-        color="#264d5f"
-        height={250}
-        width={250}
-        ariaLabel="three-circles-rotating"
-      />
+      <Hearts color="#b43bc4" height={150} width={150} />
     </Container>
   );
 };

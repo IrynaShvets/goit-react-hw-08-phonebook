@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import {
   Avatar,
   Button,
@@ -8,7 +7,6 @@ import {
   TextField,
   FormControlLabel,
   Checkbox,
-  Link,
   Paper,
   Grid,
   Box,
@@ -18,29 +16,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import operations from '../../redux/auth/auth-operations';
 import { StyledNavLink } from './SignInSide.styled';
-/* function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-} */
 
 const theme = createTheme();
 
-export default function SignInSide() {
+function SignInSide() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -59,7 +39,6 @@ export default function SignInSide() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(operations.logIn({ email, password }));
-
     setEmail('');
     setPassword('');
   };
@@ -94,7 +73,6 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            {/*#9e1111 secondary.main sx={{ m: 1, bgcolor: 'secondary.main' }}*/}
             <Avatar sx={{ m: 1, bgcolor: '#100733' }}>
               <LockOutlinedIcon />
             </Avatar>
@@ -144,18 +122,12 @@ export default function SignInSide() {
                 Sign In
               </Button>
               <Grid container>
-                {/* <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid> */}
                 <Grid item>
                   <StyledNavLink to={'/register'}>
                     Don't have an account? Sign Up
                   </StyledNavLink>
                 </Grid>
               </Grid>
-              {/*  <Copyright sx={{ mt: 5 }} /> */}
             </Box>
           </Box>
         </Grid>
@@ -163,3 +135,5 @@ export default function SignInSide() {
     </ThemeProvider>
   );
 }
+
+export default SignInSide;

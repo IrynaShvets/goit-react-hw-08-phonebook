@@ -24,9 +24,7 @@ function App() {
 
   return (
     <>
-      {isFetchingCurrentUser ? (
-        <h1>React Skeleton</h1>
-      ) : (
+      {!isFetchingCurrentUser && (
         <>
           <Routes>
             <Route path="/" element={<AppBar />}>

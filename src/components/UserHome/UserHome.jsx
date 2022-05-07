@@ -3,9 +3,9 @@ import { Image } from './UserHome.styled';
 
 function UserHome() {
   return (
-    <div>
+    <>
       <Image src={UserImage} alt="alt" />
-    </div>
+    </>
   );
 }
 
