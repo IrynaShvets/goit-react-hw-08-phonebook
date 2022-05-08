@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {} from 'react-router-dom';
 import {
   Avatar,
   Button,
@@ -26,6 +25,7 @@ function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isRegister] = useState(true);
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -74,18 +74,21 @@ function SignUp() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="name"
-                  label="Name"
-                  name="name"
-                  autoComplete="name"
-                  value={name}
-                  onChange={handleChange}
-                />
-              </Grid>
+              {isRegister && (
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="name"
+                    label="Name and last name"
+                    name="name"
+                    autoComplete="name"
+                    value={name}
+                    onChange={handleChange}
+                  />
+                </Grid>
+              )}
+
               <Grid item xs={12}>
                 <TextField
                   required
